@@ -383,6 +383,7 @@ MonoBehaviour:
   gravityModifier: 1.5
   isOnGround: 1
   gameOver: 0
+  score: 0
   scoreText: {fileID: 1645781961}
   gameOverText: {fileID: 1985776795}
 --- !u!65 &348451914
