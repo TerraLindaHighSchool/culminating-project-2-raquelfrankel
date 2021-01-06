@@ -19,7 +19,6 @@ public class PlayerController : MonoBehaviour
     public bool isOnGround = true;
     public bool gameOver;
     public int score;
-
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gameOverText;
     // Start is called before the first frame update
@@ -68,6 +67,7 @@ public class PlayerController : MonoBehaviour
                playerAnim.SetBool("Death_b", true);
                 playerAnim.SetInteger("DeathType_int", 1);
                 explosionParticle.Play();
+            
         }
 
     }
