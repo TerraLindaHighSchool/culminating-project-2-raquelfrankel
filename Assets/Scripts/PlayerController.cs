@@ -21,6 +21,9 @@ public class PlayerController : MonoBehaviour
     public int score;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gameOverText;
+    public TextMeshProUGUI instructionsText;
+
+    public bool isGameActive = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -59,6 +62,7 @@ public class PlayerController : MonoBehaviour
             playerAudio.PlayOneShot(crashSound, 1.0f);
             score++;
             scoreText.text = "Score: " + score;
+            instructionsText.gameObject.SetActive(false);
         }
         else if (collision.gameObject.CompareTag("Boundary"))
         {
@@ -67,7 +71,8 @@ public class PlayerController : MonoBehaviour
                playerAnim.SetBool("Death_b", true);
                 playerAnim.SetInteger("DeathType_int", 1);
                 explosionParticle.Play();
-            
+            gameOverText.gameObject.SetActive(true);
+            isGameActive = false;
         }
 
     }
