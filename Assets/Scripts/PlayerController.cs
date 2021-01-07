@@ -37,6 +37,9 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && isOnGround && !gameOver)
         {
+
+            instructionsText.gameObject.SetActive(false);
+
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             playerAnim = GetComponent<Animator>();
             isOnGround = false;
@@ -62,7 +65,6 @@ public class PlayerController : MonoBehaviour
             playerAudio.PlayOneShot(crashSound, 1.0f);
             score++;
             scoreText.text = "Score: " + score;
-            instructionsText.gameObject.SetActive(false);
         }
         else if (collision.gameObject.CompareTag("Boundary"))
         {
