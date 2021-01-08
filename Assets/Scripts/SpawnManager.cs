@@ -16,6 +16,7 @@ public class SpawnManager : MonoBehaviour
     {
         playerControllerScript = GameObject.Find("Player").GetComponent<PlayerController>();
         InvokeRepeating("SpawnObstacle", startDelay, repeatRate);
+
         
     }
 
@@ -31,10 +32,12 @@ public class SpawnManager : MonoBehaviour
         {
             Instantiate(obstaclePrefab, spawnPos, obstaclePrefab.transform.rotation);
         }
+        
+        
+        if (score > 2)
+        {
+            repeatRate = 2;
+        }
 
-        // (score > 2)
-       // {
-       //     repeatRate = 1 ;
-       // }
     }
 }
