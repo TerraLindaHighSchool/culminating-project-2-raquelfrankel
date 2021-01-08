@@ -7,7 +7,7 @@ public class SpawnManager : MonoBehaviour
     public GameObject obstaclePrefab;
     private Vector3 spawnPos = new Vector3(40, 0, 0);
     private float startDelay = 6;
-    private float repeatRate ;
+    private float repeatRate = 3.5f;
     private PlayerController playerControllerScript;
     private int score;
 
@@ -16,7 +16,7 @@ public class SpawnManager : MonoBehaviour
     {
         playerControllerScript = GameObject.Find("Player").GetComponent<PlayerController>();
         InvokeRepeating("SpawnObstacle", startDelay, repeatRate);
-        repeatRate = 3.5f;
+        
     }
 
     // Update is called once per frame
@@ -32,9 +32,9 @@ public class SpawnManager : MonoBehaviour
             Instantiate(obstaclePrefab, spawnPos, obstaclePrefab.transform.rotation);
         }
 
-        if (score > 2)
-        {
-            repeatRate = 1 ;
-        }
+        // (score > 2)
+       // {
+       //     repeatRate = 1 ;
+       // }
     }
 }
