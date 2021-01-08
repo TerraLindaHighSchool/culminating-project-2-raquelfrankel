@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SpawnManager : MonoBehaviour
 {
@@ -9,7 +12,9 @@ public class SpawnManager : MonoBehaviour
     private float startDelay = 6;
     private float repeatRate = 3.5f;
     private PlayerController playerControllerScript;
-    private int score;
+    private int level = 1;
+    public TextMeshProUGUI debugText;
+    public bool gameOver;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +28,7 @@ public class SpawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+    
     }
 
     void SpawnObstacle ()
@@ -32,12 +37,20 @@ public class SpawnManager : MonoBehaviour
         {
             Instantiate(obstaclePrefab, spawnPos, obstaclePrefab.transform.rotation);
         }
-        
-        
-        if (score > 2)
+
+        if (playerControllerScript.score > level * 5)
         {
-            repeatRate = 2;
+            CancelInvoke("SpawnObstacle");
+            InvokeRepeating("SpawnObstacle", startDelay, repeatRate-1.5f);
+            level++;
+
         }
 
+        if (repeatRate < 1)
+        {
+            gameOver = true;
+            
+        }
     }
 }
+
