@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gameOverText;
     public TextMeshProUGUI instructionsText;
+    public TextMeshProUGUI finalscoreText;
 
     public bool isGameActive = true;
     // Start is called before the first frame update
@@ -73,7 +74,10 @@ public class PlayerController : MonoBehaviour
                playerAnim.SetBool("Death_b", true);
                 playerAnim.SetInteger("DeathType_int", 1);
                 explosionParticle.Play();
+            scoreText.gameObject.SetActive(false);
             gameOverText.gameObject.SetActive(true);
+            finalscoreText.gameObject.SetActive(true);
+           finalscoreText.text = "Final Score: " + score;
             isGameActive = false;
         }
 
