@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour
     public TextMeshProUGUI instructionsText;
     public TextMeshProUGUI finalscoreText;
 
+    public Button restartButton;
+
     public bool isGameActive = true;
     // Start is called before the first frame update
     void Start()
@@ -79,6 +81,10 @@ public class PlayerController : MonoBehaviour
             finalscoreText.gameObject.SetActive(true);
            finalscoreText.text = "Final Score: " + score;
             isGameActive = false;
+           if (Input.GetButtonDown("restartButton"))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
         }
 
     }
