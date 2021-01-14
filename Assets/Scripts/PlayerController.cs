@@ -81,10 +81,10 @@ public class PlayerController : MonoBehaviour
             finalscoreText.gameObject.SetActive(true);
            finalscoreText.text = "Final Score: " + score;
             isGameActive = false;
-           if (Input.GetButtonDown("restartButton"))
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            }
+         //  if (Input.GetButton("restartButton"))
+         //   {
+         //       SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+         //   }
         }
 
     }

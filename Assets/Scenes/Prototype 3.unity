@@ -466,6 +466,7 @@ MonoBehaviour:
   gameOverText: {fileID: 1985776795}
   instructionsText: {fileID: 1365877146}
   finalscoreText: {fileID: 2075068677}
+  restartButton: {fileID: 1556221381}
   isGameActive: 1
 --- !u!65 &348451914
 BoxCollider:
@@ -1335,7 +1336,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Construction Advneture\n\njump and land on top of the obstacles. If you
+  m_text: "Construction Adventure\n\njump and land on top of the obstacles. If you
     hit the side, you will fly away and the game will end \n\npres space to continue"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1454,7 +1455,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1556221380
 RectTransform:
   m_ObjectHideFlags: 0
